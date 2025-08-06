@@ -54,7 +54,7 @@ exports.verifyOTP = async (req, res) => {
     await user.save();
 
     const payload = { id: user._id, mobile: user.mobile };
-    const token = jwt.sign(payload, process.env.JWT_SECRET, { expiresIn: "7d" });
+    const token = jwt.sign(payload, process.env.JWT_SECRET, { expiresIn: "7h" });
 
     return res.status(200).json({
         success: true,

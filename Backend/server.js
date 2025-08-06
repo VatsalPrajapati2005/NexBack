@@ -7,6 +7,8 @@ const userRoutes = require("./routes/userRoutes");
 const feedbackRoutes = require("./routes/feedbackRoutes"); 
 const videoRoutes=require("./routes/videoRoutes")
 const userDetailsRoutes = require("./routes/userDetailsRoute");
+const accountRoutes = require("./routes/accountRoutes");
+const walletRoutes = require("./routes/walletRoutes");
 
 
 
@@ -14,7 +16,6 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 app.use("/uploads", express.static("uploads"));
-
 
 
 mongoose.connect(process.env.MONGO_URI, {
@@ -26,7 +27,8 @@ app.use("/api", userRoutes);
 app.use("/api/feedback", feedbackRoutes); 
 app.use("/api/video", videoRoutes); 
 app.use("/api/user-details", userDetailsRoutes);
-
+app.use("/api/account", accountRoutes);
+app.use("/api/wallet", walletRoutes);
 
 const PORT = process.env.PORT || 5000;
 app.get('/', (req, res) => res.send('Hello World!'))

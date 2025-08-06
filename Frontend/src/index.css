@@ -1,1 +1,9 @@
 @import "tailwindcss";
+/* Tailwind config - optional utility shortcuts */
+.input-style {
+  @apply w-full p-2 border border-gray-300 rounded mb-2 bg-gray-100;
+}
+
+.btn-primary {
+  @apply w-full bg-black text-white py-2 rounded font-medium hover:bg-gray-800;
+}
